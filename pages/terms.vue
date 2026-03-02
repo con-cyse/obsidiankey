@@ -1,6 +1,6 @@
 <script setup lang="ts"> 
  
-import { useSeoMeta, useHead } from '@vueuse/head'; 
+//import { useSeoMeta, useHead } from '@vueuse/head'; 
  
 const title = "Obsidian Key | Home"; 
 const description = "Unlock Futures"; 
