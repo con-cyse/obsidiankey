@@ -1,0 +1,19 @@
+Use Cases
+
+- Register account
+
+- Log in
+
+- Input strengths & interests
+
+- Take assessment quiz
+
+- Generate course recommendations
+
+- View course details
+
+- Save courses
+
+- Admin manage courses
+
+- Update profile
