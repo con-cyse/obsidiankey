@@ -4,7 +4,7 @@
     <client-only> 
         <NavBar />
         <div id="okMain" class="ok-main"></div> 
-        <!-- <Cookies /> --> 
+        <Cookies />
         <Copyright />
     </client-only> 
 </template> 
