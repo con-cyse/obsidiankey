@@ -1,0 +1,121 @@
+Privacy Policy
+
+Personalized Course Matching System (MVP)
+Last Updated: March 2026
+
+1. Introduction
+
+This Privacy Policy explains how the Personalized Course Matching System (“the Platform”) collects, uses, stores, and protects personal data when users access or use the service.
+
+We are committed to protecting your privacy and ensuring compliance with applicable data protection laws including the General Data Protection Regulation and the Data Privacy Act of 2012.
+
+By using the Platform, you agree to the collection and use of your information in accordance with this policy.
+
+2. Information We Collect
+Personal Information
+
+When you create an account, we may collect:
+
+Name
+Email address
+Login credentials (password)
+
+Profile Information
+
+To provide personalized recommendations, we collect:
+
+Academic strengths
+Skills
+Interests
+Responses from the skills or interest assessment
+
+Usage Information
+
+We may also collect:
+
+Courses viewed or saved
+Interaction with recommendations
+Basic system logs for security and performance monitoring
+
+3. Purpose of Data Collection
+
+Your personal data is collected and processed for the following purposes:
+
+To create and manage your user account
+To generate personalized course recommendations
+To improve the recommendation system
+To maintain platform security and performance
+To respond to user inquiries or support requests
+
+Personal data will only be used for the purposes stated above.
+
+4. Legal Basis for Processing
+
+Processing of personal data is conducted in accordance with the General Data Protection Regulation and the Data Privacy Act of 2012 under the following legal bases:
+
+Consent – when users voluntarily provide information during registration and assessments
+Contractual necessity – to provide personalized course matching services
+Legitimate interest – to improve system functionality and user experience
+
+5. Data Sharing and Disclosure
+
+We do not sell or rent personal data.
+
+Personal data may only be shared with:
+
+Authorized system administrators responsible for operating the platform
+Trusted third-party service providers (e.g., hosting or analytics services) strictly for system operation
+
+All third parties are required to maintain appropriate data protection safeguards.
+
+6. Data Security
+
+We implement reasonable technical and organizational measures to protect personal data from:
+
+Unauthorized access
+Data loss
+Unauthorized modification or disclosure
+
+Security measures may include encrypted connections, secure authentication, and restricted administrative access.
+
+7. Data Retention
+
+Personal data will only be retained for as long as necessary to:
+
+Provide the services requested by users
+Fulfill legal and regulatory obligations
+
+Users may request account deletion at any time, after which their personal data will be removed or anonymized unless retention is required by law.
+
+8. User Rights
+
+In accordance with the General Data Protection Regulation and the Data Privacy Act of 2012, users have the right to:
+
+Access their personal data
+Correct inaccurate or incomplete data
+Request deletion of their personal data
+Withdraw consent for data processing
+Request a copy of their stored personal data
+Lodge a complaint with the appropriate data protection authority if necessary
+
+Requests may be submitted through the platform’s support contact.
+
+9. Cookies and System Logs
+
+The platform may use basic cookies or session data to:
+
+Maintain login sessions
+Improve system functionality
+Monitor system performance
+
+These cookies do not collect unnecessary personal information.
+
+10. Policy Updates
+
+This Privacy Policy may be updated periodically to reflect legal, technical, or operational changes.
+
+Users will be notified of significant updates through the platform or email.
+
+11. Contact Information
+
+For questions regarding this Privacy Policy or requests related to personal data, users may contact the platform administrator or designated data protection officer through the system’s official support channel.
