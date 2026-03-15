@@ -1,0 +1,126 @@
+Terms of Service
+
+Personalized Course Matching System (MVP)
+Last Updated: March 2026
+
+1. Acceptance of Terms
+
+By registering, accessing, or using the Personalized Course Matching System (“the Service”), you agree to comply with and be bound by these Terms of Service and applicable privacy laws including the General Data Protection Regulation and the Data Privacy Act of 2012.
+
+If you do not agree with these terms, you must not use the Service.
+
+2. Description of the Service
+
+The Service provides personalized course recommendations based on the user's:
+
+Academic strengths
+Skills
+Interests
+Assessment responses
+
+The recommendations are intended for guidance purposes only and do not guarantee admission, employment, or career outcomes.
+
+3. User Accounts
+
+Users may create an account by providing accurate and complete information, including:
+
+Name
+Email address
+Password
+Profile data related to interests and skills
+
+Users are responsible for:
+
+Maintaining the confidentiality of their login credentials
+Ensuring information provided is accurate
+All activities conducted under their account
+
+4. Data Collection
+
+To provide the Service, we collect the following types of data:
+
+Personal Information
+
+Name
+Email address
+Account credentials
+
+Profile Data
+
+Skills and academic strengths
+Interests
+Assessment responses
+
+Usage Data
+
+Interactions with recommended courses
+Saved course preferences
+
+Data is collected solely to deliver personalized course recommendations and improve the system.
+
+5. Legal Basis for Data Processing
+
+Personal data is processed in accordance with the General Data Protection Regulation and the Data Privacy Act of 2012 under the following lawful bases:
+
+User Consent – when users voluntarily provide their information
+Legitimate Interest – to improve the recommendation system
+Contractual Necessity – to provide the Service requested by the user
+
+6. User Data Rights
+
+Users have the right to:
+
+Access their personal data
+Correct inaccurate or outdated data
+Request deletion of their personal data
+Withdraw consent for data processing
+Request a copy of stored personal data
+
+Requests may be submitted through the platform’s support contact.
+
+7. Data Protection and Security
+
+We implement reasonable administrative, technical, and organizational safeguards to protect personal data against:
+
+Unauthorized access
+Data loss
+Misuse or disclosure
+
+Access to personal data is limited to authorized personnel responsible for system operation and maintenance.
+
+8. Data Retention
+
+User data will be retained only for as long as necessary to provide the Service or comply with legal obligations.
+Users may request account deletion, after which personal data will be removed or anonymized unless legally required to retain it.
+
+9. Third-Party Services
+
+The Service may use third-party tools for hosting, analytics, or system functionality. These providers are required to maintain appropriate data protection standards.
+
+No personal data will be sold or shared for marketing purposes without user consent.
+
+10. Acceptable Use
+
+Users agree not to:
+
+Provide false or misleading information
+Attempt to gain unauthorized access to the system
+Use the platform for unlawful or harmful activities
+
+Violation of these rules may result in account suspension or termination.
+
+11. Limitation of Liability
+
+The Service provides course recommendations based on algorithmic matching and user-provided data.
+We do not guarantee the accuracy, completeness, or suitability of recommendations for specific academic or career outcomes.
+
+12. Changes to the Terms
+
+We reserve the right to modify these Terms of Service at any time.
+Users will be notified of significant updates through the platform or via email.
+
+Continued use of the Service after changes constitutes acceptance of the updated terms.
+
+13. Contact Information
+
+For questions, privacy concerns, or data requests, users may contact the system administrator or data protection officer through the platform's support channels.
