@@ -2,10 +2,10 @@
  
 <template> 
     <client-only> 
-        <!-- <NavBar /> --> 
+        <NavBar />
         <div id="okMain" class="ok-main"></div> 
         <!-- <Cookies /> --> 
-        <!-- <Copyright /> --> 
+        <Copyright />
     </client-only> 
 </template> 
  

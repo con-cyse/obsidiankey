@@ -81,5 +81,23 @@ background-color: #f2f4f7;
 } 
 
 /* main contents */ 
+
  
 /* copyright */ 
+.ok-footer-area { 
+ width: 100%; 
+ padding: 10px 0; 
+ font-size: 0.8em; 
+ text-align: center; 
+ color: #666; 
+} 
+ 
+.ok-footer-links a { 
+ font-weight: bold; 
+ text-decoration: none; 
+ color: #666; 
+} 
+ 
+.ok-footer-copyright { 
+ margin-top: 5px; 
+} 
