@@ -1,19 +1,31 @@
 <template>  
   <client-only>  
-    <header class="ok-navbar">  
-      <nav class="ok-nav-left"> 
-          <a href="/" class="ok-nav-home"> 
-            <img src="/logo.png" width=20 height=20 class="ok-nav-logo"> 
-            <span>Obsidian Key</span> 
+    <header :class="['bh-navbar', navAdminMode]">  
+      <nav class="bh-nav-left"> 
+          <a href="/" class="bh-nav-home"> 
+            <img src="/logo.png" width=20 height=20 class="bh-nav-logo"> 
+            <span>Bleedingheart</span> 
           </a>  
       </nav>  
-      <nav class="ok-nav-right">  
+      <nav id="bhNavBasic" class="bh-nav-right bh-hidden">  
         <ul> 
-          <li><a href="#" class="ok-nav-link">Generate Course Recommendations</a></li> 
-          <li><a href="#" class="ok-nav-link">View Course Details</a></li> 
-          <li><a href="#" class="ok-nav-link">Update Profile</a></li> 
+          <li><a href="#" class="bh-nav-link">3R Guide</a></li> 
+          <li><a href="#" class="bh-nav-link">Leaderboard</a></li> 
+          <li><a href="#" class="bh-nav-link">Contribute</a></li> 
+          <li><span id="bhNavBasicLogout" class="bh-nav-link">Logout</span></li> 
         </ul> 
-      </nav>  
+      </nav> 
+      <nav id="bhNavAdmin" class="bh-nav-right bh-hidden">  
+        <ul> 
+          <li><a href="#" class="bh-nav-link">Settings</a></li> 
+          <li><a href="#" class="bh-nav-link">Reports</a></li> 
+          <li><span id="bhNavAdminLogout" class="bh-nav-link">Logout</span></li> 
+        </ul> 
+      </nav> 
     </header>  
   </client-only>  
-</template>
+</template> 
+ 
+<script setup lang="ts"> 
+const props = defineProps<{ navAdminMode: string }>(); 
+</script>
