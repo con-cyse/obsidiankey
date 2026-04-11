@@ -94,8 +94,8 @@ type ContentResponse = {
 }; 
  
 const router = useRouter(); 
-const bhServer = "https://bleedingheart-api.vercel.app"; 
-let navAdminMode = userLevel.value >= 2 ? "bh-nav-admin" : ""; 
+const okServer = "https://bleedingheart-api.vercel.app"; 
+let navAdminMode = userLevel.value >= 2 ? "ok-nav-admin" : ""; 
  
 function getByID<T extends HTMLElement>(id: string) { 
   return document.getElementById(id) as T; 
@@ -108,10 +108,10 @@ function checkAuthorizations() {
     router.push("/admin"); 
   } 
  
-  const navBasic = getByID<HTMLDivElement>("bhNavBasic"); 
-  const navAdmin = getByID<HTMLDivElement>("bhNavAdmin"); 
-  const navLogout = getByID<HTMLDivElement>("bhNavBasicLogout");
-  const pageTitle = getByID<HTMLSpanElement>("bhPageTitle"); 
+  const navBasic = getByID<HTMLDivElement>("okNavBasic"); 
+  const navAdmin = getByID<HTMLDivElement>("okNavAdmin"); 
+  const navLogout = getByID<HTMLDivElement>("okNavBasicLogout");
+  const pageTitle = getByID<HTMLSpanElement>("okPageTitle"); 
  
   if (!navBasic || !navAdmin || !navLogout || !pageTitle) return; 
  
@@ -126,17 +126,17 @@ function checkAuthorizations() {
   }); 
  
   navAdmin.remove(); 
-  navBasic.classList.remove("bh-hidden"); 
-  pageTitle.classList.remove("bh-hidden"); 
+  navBasic.classList.remove("ok-hidden"); 
+  pageTitle.classList.remove("ok-hidden"); 
  
   loadModal(); 
 } 
  
 function loadModal() { 
-  const cookieModal = getByID<HTMLDivElement>("bhCookieModal"); 
-  const cookieBox = getByID<HTMLDivElement>("bhCookieBox"); 
-  const cookieX = getByID<HTMLDivElement>("bhCookieX"); 
-  const cookieOK = getByID<HTMLDivElement>("bhCookieOK"); 
+  const cookieModal = getByID<HTMLDivElement>("okCookieModal"); 
+  const cookieBox = getByID<HTMLDivElement>("okCookieBox"); 
+  const cookieX = getByID<HTMLDivElement>("okCookieX"); 
+  const cookieOK = getByID<HTMLDivElement>("okCookieOK"); 
   if (!cookieModal || !cookieBox || !cookieX || !cookieOK) return; 
  
   if (allowCookies.value === true) { 
@@ -156,21 +156,21 @@ function loadModal() {
 } 
  
 function showCookiePopup(show: boolean = true) { 
-  const cookieBox = getByID<HTMLDivElement>("bhCookieBox"); 
-  const cookieModal = getByID<HTMLDivElement>("bhCookieModal"); 
+  const cookieBox = getByID<HTMLDivElement>("okCookieBox"); 
+  const cookieModal = getByID<HTMLDivElement>("okCookieModal"); 
   if (!cookieBox || !cookieModal) { 
     setTimeout(showCookiePopup, 50); 
     return; 
   } 
  
   if (!show) { 
-    cookieBox.classList.add("bh-hidden");
-    cookieModal.classList.add("bh-hidden"); 
+    cookieBox.classList.add("ok-hidden");
+    cookieModal.classList.add("ok-hidden"); 
     return; 
   } 
  
-  cookieBox.classList.remove("bh-hidden"); 
-  cookieModal.classList.remove("bh-hidden"); 
+  cookieBox.classList.remove("ok-hidden"); 
+  cookieModal.classList.remove("ok-hidden"); 
 } 
  
 let lastCookieClicked = 0; 
@@ -198,7 +198,7 @@ async function loadContents() {
       userLevel: String(userLevel.value), 
       accessToken: accessToken.value, 
     }).toString(); 
-    const response = (await $fetch(`${bhServer}/get_contents?${query}`, { 
+    const response = (await $fetch(`${okServer}/get_contents?${query}`, { 
       headers: { "Content-Type": "application/json" }, 
       method: "GET", 
     })) as ContentResponse; 
@@ -208,7 +208,7 @@ async function loadContents() {
     return; 
   } 
  
-  const container = getByID<HTMLDivElement>("bhContainer"); 
+  const container = getByID<HTMLDivElement>("okContainer"); 
   if (!container) return; 
  
   container.innerHTML = ""; 
@@ -218,14 +218,14 @@ async function loadContents() {
  
 function renderContents(data: ContentItem[]): HTMLElement { 
   const parent = document.createElement("div"); 
-  parent.className = "bh-contents"; 
+  parent.className = "ok-contents"; 
   data.forEach((item, index) => { 
     const wrapper = document.createElement("div"); 
     wrapper.id = `content-${index}`; 
-    wrapper.className = "bh-content-box"; 
+    wrapper.className = "ok-content-box"; 
  
     const title = document.createElement("h2"); 
-    title.className = "bh-content-title"; 
+    title.className = "ok-content-title"; 
     title.textContent = item.title; 
  
     const meta = document.createElement("p"); 
@@ -236,10 +236,10 @@ function renderContents(data: ContentItem[]): HTMLElement {
       day: "numeric", 
     }); 
     meta.textContent = `by ${item.author} • ${published}`; 
-    meta.className = "bh-content-meta"; 
+    meta.className = "ok-content-meta"; 
  
     const content = document.createElement("p"); 
-    content.className = "bh-content-data"; 
+    content.className = "ok-content-data"; 
     content.textContent = item.content; 
  
     wrapper.append(title, meta, content); 
@@ -251,11 +251,11 @@ function renderContents(data: ContentItem[]): HTMLElement {
 </script> 
  
 <style> 
-.bh-nav-link:hover { 
+.ok-nav-link:hover { 
   cursor: pointer; 
 } 
  
-.bh-page-title { 
+.ok-page-title { 
   position: relative; 
   margin: 60px auto 0; 
   width: 800px; 
@@ -267,14 +267,14 @@ function renderContents(data: ContentItem[]): HTMLElement {
   display: block; 
 } 
  
-.bh-container { 
+.ok-container { 
   position: relative; 
   margin: 20px auto 0; 
   width: 800px; 
   max-width: 90%;
 } 
  
-.bh-content-box { 
+.ok-content-box { 
   margin-bottom: 10px; 
   padding: 20px; 
   background: #fff; 
@@ -283,17 +283,17 @@ function renderContents(data: ContentItem[]): HTMLElement {
   cursor: pointer; 
 } 
  
-.bh-content-title { 
+.ok-content-title { 
   line-height: 1.5em; 
   font-weight: bold; 
 } 
  
-.bh-content-meta { 
+.ok-content-meta { 
   font-size: 0.8em; 
   color: #666; 
 } 
  
-.bh-content-data { 
+.ok-content-data { 
   margin-top: 10px; 
   line-height: 1.5em; 
 } 
