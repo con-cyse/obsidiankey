@@ -41,62 +41,70 @@ export default function HomePage() {
 
   // Load Session Cookies & Local Storage on mount
   useEffect(() => {
-    const cookies = document.cookie;
-    const userMatch = cookies.match(/(^| )username=([^;]+)/);
-    const nameMatch = cookies.match(/(^| )fullName=([^;]+)/);
-    const levelMatch = cookies.match(/(^| )userLevel=([^;]+)/);
+    const timer = window.setTimeout(() => {
+      const cookies = document.cookie;
+      const userMatch = cookies.match(/(^| )username=([^;]+)/);
+      const nameMatch = cookies.match(/(^| )fullName=([^;]+)/);
+      const levelMatch = cookies.match(/(^| )userLevel=([^;]+)/);
 
-    setUsername(userMatch ? decodeURIComponent(userMatch[2]) : "guest");
-    setFullName(nameMatch ? decodeURIComponent(nameMatch[2]) : "Guest User");
-    setUserLevel(levelMatch ? Number(levelMatch[2]) : 0);
-    setIsAuthenticated(true);
-    setIsLoadingAuth(false);
+      setUsername(userMatch ? decodeURIComponent(userMatch[2]) : "guest");
+      setFullName(nameMatch ? decodeURIComponent(nameMatch[2]) : "Guest User");
+      setUserLevel(levelMatch ? Number(levelMatch[2]) : 0);
+      setIsAuthenticated(true);
+      setIsLoadingAuth(false);
+    }, 0);
+
+    return () => window.clearTimeout(timer);
   }, []);
 
   // Load Courses and Bookmarks from localStorage on mount after auth succeeds
   useEffect(() => {
     if (!isAuthenticated) return;
 
-    // Load custom courses
-    const storedCourses = localStorage.getItem("ok_custom_courses");
-    if (storedCourses) {
-      try {
-        setCourses(JSON.parse(storedCourses));
-      } catch (e) {
+    const timer = window.setTimeout(() => {
+      // Load custom courses
+      const storedCourses = localStorage.getItem("ok_custom_courses");
+      if (storedCourses) {
+        try {
+          setCourses(JSON.parse(storedCourses));
+        } catch {
+          setCourses(DEFAULT_COURSES);
+        }
+      } else {
         setCourses(DEFAULT_COURSES);
+        localStorage.setItem("ok_custom_courses", JSON.stringify(DEFAULT_COURSES));
       }
-    } else {
-      setCourses(DEFAULT_COURSES);
-      localStorage.setItem("ok_custom_courses", JSON.stringify(DEFAULT_COURSES));
-    }
 
-    // Load saved bookmarks
-    const storedSaved = localStorage.getItem("ok_saved_matches");
-    if (storedSaved) {
-      try {
-        setSavedMatches(JSON.parse(storedSaved));
-      } catch (e) {
-        setSavedMatches({});
+      // Load saved bookmarks
+      const storedSaved = localStorage.getItem("ok_saved_matches");
+      if (storedSaved) {
+        try {
+          setSavedMatches(JSON.parse(storedSaved));
+        } catch {
+          setSavedMatches({});
+        }
       }
-    }
 
-    // Load user profile preferences
-    const storedEmail = localStorage.getItem(`ok_profile_email_${username}`);
-    const storedStyle = localStorage.getItem(`ok_profile_style_${username}`);
-    const storedTraits = localStorage.getItem(`ok_profile_traits_${username}`);
+      // Load user profile preferences
+      const storedEmail = localStorage.getItem(`ok_profile_email_${username}`);
+      const storedStyle = localStorage.getItem(`ok_profile_style_${username}`);
+      const storedTraits = localStorage.getItem(`ok_profile_traits_${username}`);
 
-    if (storedEmail) setUserEmail(storedEmail);
-    if (storedStyle) setStudyStyle(storedStyle);
-    if (storedTraits) {
-      try {
-        const parsed = JSON.parse(storedTraits);
-        setStrengths(parsed.strengths || []);
-        setHobbies(parsed.hobbies || []);
-        setWorkPreferences(parsed.workPreferences || []);
-      } catch (e) {
-        // use empty arrays
+      if (storedEmail) setUserEmail(storedEmail);
+      if (storedStyle) setStudyStyle(storedStyle);
+      if (storedTraits) {
+        try {
+          const parsed = JSON.parse(storedTraits);
+          setStrengths(parsed.strengths || []);
+          setHobbies(parsed.hobbies || []);
+          setWorkPreferences(parsed.workPreferences || []);
+        } catch {
+          // use empty arrays
+        }
       }
-    }
+    }, 0);
+
+    return () => window.clearTimeout(timer);
   }, [isAuthenticated, username]);
 
   // Save profile to localStorage helper
@@ -553,7 +561,7 @@ export default function HomePage() {
                   <span style={{ fontSize: "3rem" }}>🧩</span>
                   <h4 style={{ margin: "16px 0 6px" }}>No Matches Found</h4>
                   <p style={{ fontSize: "0.9em", maxWidth: "450px", margin: "0 auto" }}>
-                    We couldn't find any courses matching your selected tags. Try selecting more strengths or hobbies, or reset and take the Quiz Assessment!
+                    We could not find any courses matching your selected tags. Try selecting more strengths or hobbies, or reset and take the Quiz Assessment!
                   </p>
                 </div>
               )}
@@ -710,7 +718,7 @@ export default function HomePage() {
                   <span style={{ fontSize: "3.5rem" }}>📂</span>
                   <h4 style={{ margin: "16px 0 6px" }}>No Bookmarked Courses</h4>
                   <p style={{ fontSize: "0.9em", maxWidth: "450px", margin: "0 auto", marginBottom: "20px" }}>
-                    You haven't bookmarked any degrees yet. Head to the recommendations list and click the star icon to save!
+                    You have not bookmarked any degrees yet. Head to the recommendations list and click the star icon to save!
                   </p>
                   <button className="ok-btn ok-btn-primary" onClick={() => setActiveTab("matcher")}>
                     Find Matched Recommendations

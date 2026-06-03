@@ -1,7 +1,13 @@
 import { NextResponse } from "next/server";
 
 const UPSTREAM_API_BASE = "https://obsidiankey-api.vercel.app";
-const BACKUP_API_BASE = "https://bleedingheart-api.vercel.app";
+const BACKUP_API_BASE = "https://obsidiankey-api.vercel.app";
+
+type LoginResponse = {
+  accessToken?: string;
+  token?: string;
+  [key: string]: unknown;
+};
 
 const LOGIN_PATHS = [
   "/login",
@@ -27,7 +33,7 @@ export async function POST(request: Request) {
     // Attempt to hit the upstream APIs
     const bases = [UPSTREAM_API_BASE, BACKUP_API_BASE];
     let upstreamSuccess = false;
-    let upstreamResponse: any = null;
+    let upstreamResponse: LoginResponse | null = null;
 
     for (const base of bases) {
       for (const path of LOGIN_PATHS) {
@@ -43,14 +49,14 @@ export async function POST(request: Request) {
           });
 
           if (res.ok) {
-            const data = await res.json();
+            const data: LoginResponse = await res.json();
             if (data.accessToken || data.token) {
               upstreamResponse = data;
               upstreamSuccess = true;
               break;
             }
           }
-        } catch (e) {
+        } catch {
           // Continue attempting paths
         }
       }
@@ -95,9 +101,10 @@ export async function POST(request: Request) {
       { status: 401 }
     );
 
-  } catch (error: any) {
+  } catch (error: unknown) {
+    const message = error instanceof Error ? error.message : "Internal Server Error in authentication proxy.";
     return NextResponse.json(
-      { message: error?.message || "Internal Server Error in authentication proxy." },
+      { message },
       { status: 500 }
     );
   }

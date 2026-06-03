@@ -69,8 +69,8 @@ export default function LoginPage() {
       setTimeout(() => {
         router.push("/");
       }, 1500);
-    } catch (err: any) {
-      setErrorText(err.message || "An unexpected error occurred.");
+    } catch (err: unknown) {
+      setErrorText(err instanceof Error ? err.message : "An unexpected error occurred.");
     } finally {
       setIsSubmitting(false);
     }
