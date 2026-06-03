@@ -208,6 +208,7 @@ export default function HomePage() {
     document.cookie = "accessToken=; path=/; max-age=0; SameSite=None; Secure";
     document.cookie = "userLevel=; path=/; max-age=0; SameSite=None; Secure";
     document.cookie = "fullName=; path=/; max-age=0; SameSite=None; Secure";
+    setActiveTab("dashboard");
     setUsername("guest");
     setFullName("Guest User");
     setUserLevel(0);

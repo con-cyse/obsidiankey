@@ -7,7 +7,7 @@ interface NavBarProps {
   setActiveTab: (tab: string) => void;
   userLevel: number;
   fullName: string;
-  onResetData: () => void;
+  onLogout: () => void;
 }
 
 export default function NavBar({
@@ -15,7 +15,7 @@ export default function NavBar({
   setActiveTab,
   userLevel,
   fullName,
-  onResetData,
+  onLogout,
 }: NavBarProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const isAdmin = userLevel >= 2;
@@ -117,11 +117,13 @@ export default function NavBar({
               👤 {fullName.split(" ")[0] || "Profile"}
             </button>
           </li>
-          <li>
-            <button onClick={onResetData} className="ok-nav-link ok-logout">
-              Reset Data
-            </button>
-          </li>
+          {userLevel > 0 && (
+            <li>
+              <button onClick={onLogout} className="ok-nav-link ok-logout">
+                Log Out
+              </button>
+            </li>
+          )}
         </ul>
       </nav>
 
